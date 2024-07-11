@@ -4,29 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nacionalidade</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+            text-align: center;
+        }
+        input{
+            font: normal 18pt Arial;
+            width: 150px;
+            padding-left: 5px;
+        }
+        div#res{
+            margin-top: 20px;
+            
+        }
+    </style>
 </head>
 <body>
     <h1>Nacionalidade</h1>
-    Estrangeiro ou Brasileiro: <input type="text" name="txtn" id="país">
-    <input type="button" value="Verificar" onclick="mostrar()">
+        <p>Estrangeiro ou Brasileiro:<input type="text" name="txtn1" id="txtn1">
+    <input type="button" value="Verificar" onclick="mostrar()"></p>
     <div id="res">
 
     </div>
     <script>
-        var txtn = document.getElementById('país')
 
-        function mostrar(){
-            var txtn = document.getElementById('txtn')
-            var res = document.getElementById ('res')
-            var país = Text(txtn)
-            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}km/h</strong> </p>`
-            if(país == Brasil){
-               res.innerHTML+=`Você é Brasileiro`
+            function mostrar(){
+    
+                var nacao = document.getElementById('txtn1')
+                var res = document.getElementById ('res')
+                var pais = (nacao.value)
+                res.innerHTML = `Residindo no Brasil e sendo natural do(a) <strong>${pais}</strong>, `
+                if ( pais == 'Brasil'|| pais == 'brasil'){
+                    res.innerHTML += 'Você é Brasileiro!'
+                }
+                /*else if( pais == 'brasil') {
+                    res.innerHTML += 'Você é Brasileiro!'
+                }*/
+                else if (pais>=0){
+                    res.innerHTML += 'Nacionalidade Inválida'
+                } 
+                else{
+                    res.innerHTML += 'Você é Estrangeiro!'
+                    }
+                    
             }
-            else(
-                 res.innerHTML `Você é estrangeiro`)
+        
             
-        }
     </script>
 </body>
 </html>
