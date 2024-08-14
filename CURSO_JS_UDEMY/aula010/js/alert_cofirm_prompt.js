@@ -1,0 +1,7 @@
+alert('Olha o alertaaa!!!')
+let nome = prompt('qual seu nome?')
+let num1 = prompt('Digite um número')
+let num2 = prompt('Digite outro número')
+num1 = Number(num1)
+num2 = Number(num2)
+alert (`Olá ${nome}!! A soma entre ${num1} e ${num2} resulta em ${num1 + num2}`)
